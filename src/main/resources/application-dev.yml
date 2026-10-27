@@ -7,7 +7,10 @@ spring:
     ollama:
       base-url: http://localhost:11434
       chat:
-        options:
-          model: qwen3:1.7b
-          temperature: 0.0
-          num-predict: 32
+        model: qwen3:4b
+        think: false
+        temperature: 0.0
+        num-predict: 256
+logging:
+  level:
+    org.springframework.ai: DEBUG

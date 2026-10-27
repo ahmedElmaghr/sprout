@@ -1,9 +1,6 @@
 package com.edu.fod.agentic.sprout;
 
-import org.springaicommunity.agent.tools.FileSystemTools;
-import org.springaicommunity.agent.tools.GlobTool;
-import org.springaicommunity.agent.tools.GrepTool;
-import org.springaicommunity.agent.tools.ShellTools;
+import org.springaicommunity.agent.tools.*;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -26,13 +23,13 @@ public class SproutApplication {
         return (args) -> {
             ChatClient chatClient = builder
                     .defaultSystem("""
-                            	You are a helpful coding assistant, you have access to tools
-                            	for reading files, searching code, running shell commands,
-                            	and editing files.Use them to help the user with their codebase.
-                            	
-                            	Current Directory:%s
+                            	You are a helpful coding assistant.
+                                 Use available skills and tools to help with the codebase.
+                                 Current directory: %s
                             """.formatted(System.getProperty("user.dir")))
                     .defaultTools(
+                            SkillsTool.builder()
+                                    .addSkillsDirectory(".claude/skills").build(),
                             FileSystemTools.builder().build(),
                             GrepTool.builder().build(),
                             GlobTool.builder().build(),
@@ -48,7 +45,7 @@ public class SproutApplication {
 
                 try{
                     String response = chatClient.prompt(input)
-                            .toolContext(Map.of("workDir",System.getProperty("user.dir")))
+                            //.toolContext(Map.of("workDir",System.getProperty("user.dir")))
                             .call()
                             .content();
                     System.out.println("\n"+response);
