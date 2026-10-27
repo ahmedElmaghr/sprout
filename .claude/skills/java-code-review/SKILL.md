@@ -1,7 +1,8 @@
-
 ---
 name: java-code-review
 description: Review Java and Spring Boot code for bugs, maintainability, security, performance, and testing quality. Use when reviewing a pull request or evaluating a code change.
+allowed-tools: read_file grep
+compatibility: Requires file system access and git repository context.
 ---
 
 # Java Code Review

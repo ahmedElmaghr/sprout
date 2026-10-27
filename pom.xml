@@ -32,15 +32,24 @@
 	</properties>
 	<dependencies>
 		<!-- Source: https://mvnrepository.com/artifact/org.springframework.ai/spring-ai-starter-model-anthropic -->
-		<dependency>
+		<!-- dependency>
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-starter-model-anthropic</artifactId>
 			<scope>compile</scope>
-		</dependency>
+		</dependency -->
+
+		<!-- Ollama -->
 		<dependency>
 			<groupId>org.springframework.ai</groupId>
 			<artifactId>spring-ai-starter-model-ollama</artifactId>
 		</dependency>
+
+		<!-- Gemini Gen AI -->
+		<!-- dependency>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-starter-model-google-genai</artifactId>
+		</dependency -->
+
 		<!-- Source: https://mvnrepository.com/artifact/org.springaicommunity/spring-ai-agent-utils -->
 		<dependency>
 			<groupId>org.springaicommunity</groupId>

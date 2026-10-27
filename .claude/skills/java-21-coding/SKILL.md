@@ -1,7 +1,8 @@
-
 ---
 name: java-21-coding
 description: Write, refactor, and review production-quality Java 21 code using modern language features, clean code principles, SOLID, and secure coding practices. Use for Java implementation, bug fixes, and code reviews.
+allowed-tools: read_file grep
+compatibility: Requires file system access and git repository context.
 ---
 
 # Java 21 Coding Standards

@@ -2,8 +2,13 @@ spring:
   application:
     name: sprout
   ai:
-    anthropic:
-      api-key: ${ANTHROPIC_API_KEY}
-      chat:
-        options:
-          model: claude-sonnet-4-5-20250929
+    google:
+      genai:
+        api-key: ${GEMINI_API_KEY}
+        chat:
+          options:
+            model: gemini-3.8-flash
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springaicommunity.agent: DEBUG
